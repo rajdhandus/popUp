@@ -1,0 +1,1 @@
+alert("/public/assets/scripts/app.js has loaded!");

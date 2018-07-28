@@ -1,0 +1,29 @@
+{
+  "name": "popup",
+  "version": "1.0.0",
+  "description": "A customizable turnkey ecommerce solution for small business owners.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajdhandus/popUp.git"
+  },
+  "keywords": [
+    "popup",
+    "ecommerce"
+  ],
+  "author": "Team Popup",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rajdhandus/popUp/issues"
+  },
+  "homepage": "https://github.com/rajdhandus/popUp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.5",
+    "morgan": "^1.9.0"
+  }
+}
