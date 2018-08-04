@@ -4,29 +4,21 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema({
     
     //First name
-    firstName: {
+    userFirstName: {
       type: String,
       trim: true,
       required: "Please enter your first name."
     },
     
     //Last name
-    lastName: {
+    userLastName: {
       type: String,
       trim: true,
       required: "Please enter your last name."
-    },
-    
-    //Unique username
-    userName: {
-      type: String,
-      trim: true,
-      unique: true,
-      required: "Please enter a username."
-    },
+    },  
     
     //Password at least 6 characters
-    password: {
+    userPassword: {
       type: String,
       trim: true,
       required: "Please enter a password.",
@@ -38,7 +30,8 @@ var UserSchema = new Schema({
       ]
     },
 
-    phone: {
+    //Valid phone number
+    userPhone: {
       type: String,
       unique: true,
       match: [/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/, "Please enter a valid phone number."]
@@ -52,7 +45,8 @@ var UserSchema = new Schema({
     },
 
     admin: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
 
     //"Member since" timestamp

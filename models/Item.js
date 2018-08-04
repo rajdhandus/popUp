@@ -7,7 +7,7 @@ var itemSchema = new Schema({
     upc: Number,
     price: Number,
     stock: Number,
-    photo_url: String
+    photoURL: String
 });
 
 var Item = mongoose.model("Item", itemSchema);
