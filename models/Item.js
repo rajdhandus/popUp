@@ -4,9 +4,10 @@ var Schema = mongoose.Schema;
 
 var itemSchema = new Schema({
     name: String,
-    category: String,
+    upc: Number,
     price: Number,
-    stock: Number
+    stock: Number,
+    photo_url: String
 });
 
 var Item = mongoose.model("Item", itemSchema);

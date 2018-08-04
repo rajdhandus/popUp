@@ -37,12 +37,22 @@ var UserSchema = new Schema({
         "Please enter a password at least 6 characters long."
       ]
     },
+
+    phone: {
+      type: String,
+      unique: true,
+      match: [/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/, "Please enter a valid phone number."]
+    },
     
     //Email address with regex validation
     email: {
       type: String,
       unique: true,
       match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+    },
+
+    admin: {
+      type: Boolean
     },
 
     //"Member since" timestamp
