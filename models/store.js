@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+var storeSchema = new Schema({
     // Store Name
     storeName: {
         type: String,
@@ -33,13 +33,13 @@ var UserSchema = new Schema({
     storeCity: {
         type: String,
         trim: true,
-        required: "Please enter the city your store is located in."
+        required: "Please enter the city in which your store is located."
     },
 
     storeState: {
         type: String,
         trim: true,
-        required: "Please enter the state your store is located in."
+        match: [^(?i:A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$, "Please enter a valid state abbreviation."]
     },
 
     storeZip: {
@@ -63,6 +63,6 @@ var UserSchema = new Schema({
 
 });
 
-var user = mongoose.model("Store", userSchema);
+var store = mongoose.model("Store", storeSchema);
 
 module.exports = Store;

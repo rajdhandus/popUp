@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // CONNECT TO THE DB
-mongoose.connect("mongodb://localhost:27017/popup", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/popup", { useNewUrlParser: true });
 
 // INITIALIZE LISTEN
 app.listen(port, function() {
