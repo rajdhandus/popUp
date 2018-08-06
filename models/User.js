@@ -1,61 +1,67 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
-    
-    //First name
-    userFirstName: {
-      type: String,
-      trim: true,
-      required: "Please enter your first name."
-    },
-    
-    //Last name
-    userLastName: {
-      type: String,
-      trim: true,
-      required: "Please enter your last name."
-    },  
-    
-    //Password at least 6 characters
-    userPassword: {
-      type: String,
-      trim: true,
-      required: "Please enter a password.",
-      validate: [
-        function(input) {
-          return input.length >= 6;
-        },
-        "Please enter a password at least 6 characters long."
-      ]
-    },
+var userSchema = new Schema({
 
-    //Valid phone number
-    userPhone: {
-      type: String,
-      unique: true,
-      match: [/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/, "Please enter a valid phone number."]
-    },
-    
-    //Email address with regex validation
-    email: {
-      type: String,
-      unique: true,
-      match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
-    },
+  //Store account
+  store_id: {
+    type: Schema.Types.ObjectId,
+    ref: "Store"
+  },
 
-    admin: {
-      type: Boolean,
-      default: false
-    },
+  //First name
+  userFirstName: {
+    type: String,
+    trim: true,
+    required: "Please enter your first name."
+  },
 
-    //"Member since" timestamp
-    memberSince: {
-      type: Date,
-      default: Date.now
-    }
-  });
+  //Last name
+  userLastName: {
+    type: String,
+    trim: true,
+    required: "Please enter your last name."
+  },
 
-  var user = mongoose.model("User", userSchema);
+  //Password at least 6 characters
+  userPassword: {
+    type: String,
+    trim: true,
+    required: "Please enter a password.",
+    validate: [
+      function (input) {
+        return input.length >= 6;
+      },
+      "Please enter a password at least 6 characters long."
+    ]
+  },
 
-  module.exports = User;
+  //Valid phone number
+  userPhone: {
+    type: String,
+    unique: true,
+    match: [/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/, "Please enter a valid phone number."]
+  },
+
+  //Email address with regex validation
+  email: {
+    type: String,
+    unique: true,
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+  },
+
+  admin: {
+    type: Boolean,
+    default: false
+  },
+
+  //"Member since" timestamp
+  memberSince: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+var User = mongoose.model("User", userSchema);
+
+module.exports = User;
