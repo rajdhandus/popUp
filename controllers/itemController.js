@@ -1,38 +1,56 @@
 // http://mongoosejs.com/docs/api.html
 
+// controller -> apiRoute -> utils(frontend) -> components(jsx)
+// when a callback happens (goes backward)
+
 const db = require("../models");
 
 module.exports = {
 
     // queries all items
-    // controllers.itemController.getAllItems()
-    getAllItems: () => {
+    // .get(controllers.itemController.findAll)
+    findAll: (req, res) => {
         db.Item
-        .find({})
-    },
-    
-    // queries one item by it's upc
-    // controllers.itemController.getFindOneItem(upc)
-    getFindOneItem: (upc) => {
-        db.Item.findOne({ upc: upc })
+            .find({})
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
 
-    // I'm not sure how to do this one - CB
+
+    // queries one item by it's upc
+    // .get(controllers.itemController.findOne)
+    findOne: (req, res) => {
+        db.Item
+            .find({ upc: upc })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
+
     // creates an item
-    // createItem: () => { 
-    //     db.Item.create()
-    //     db.Item.insert()
-    // },
+    // .post(controllers.itemController.create)
+    create: (req, res) => {
+        db.Item
+            .create(req.body)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
+
+    // updates an item
+    // .post(controllers.itemController.update)
+    update: (req, res) => {
+        db.Item
+            .findOneAndUpdate({ _id: req.params.id }, req.body)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
 
     // deletes an item by it's upc
-    // controllers.itemController.deleteItem(upc)
-    deleteItem: (upc) => {
-        db.Item.findOneAndDelete({ upc: upc })
-    },
-
-    // updates an item by it's upc
-    // controllers.itemController.updateItem(upc)
-    updateItem: (upc) => {
-        db.Item.findOneAndUpdate({ upc: upc })
+    // .delete(controllers.itemController.remove)
+    remove: (req, res) => {
+        db.Item
+            .findById({ _id: req.params.id })
+            .then(dbModel => dbModel.remove())
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err))
     }
 };
