@@ -36,7 +36,7 @@ module.exports = {
     },
 
     // updates an item
-    // .post(controllers.itemController.update)
+    // .put(controllers.itemController.update)
     update: (req, res) => {
         db.Item
             .findOneAndUpdate({ _id: req.params.id }, req.body)
@@ -48,7 +48,7 @@ module.exports = {
     // .delete(controllers.itemController.remove)
     remove: (req, res) => {
         db.Item
-            .findById({ _id: req.params.id })
+            .findById({ upc: req.params.upc})
             .then(dbModel => dbModel.remove())
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
