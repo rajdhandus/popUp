@@ -1,58 +1,49 @@
 const db = require("../models");
 
 module.exports = {
-
-    // query user by fullName
-    // controllers.userController.getUserByFullName()
-    getUserByFullName: () => {
+    // queries all users
+    // .get(controllers.userController.findAll)
+    findAll: (req, res) => {
         db.User
-            .find({
-                name: {
-                    userFirstName: "",
-                    userLastName: ""
-                }
-            })
+            .find({})
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
 
-    // query user by firstName
-    // controllers.userController.findUserByFirstName(userFirstName)
-    findUserByFirstName: (userFirstName) => {
-        db.User.find({ userFirstName: userFirstName })
+    // queries a user by their email
+    // .get(controllers.userController.findOne)
+    findOne: (req, res) => {
+        db.User
+            .find({ userEmail: userEmail })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
 
-    // query user by lastName
-    // controllers.userController.findUserByLastName(userLastName)
-    findUserByLastName: (userLastName) => {
-        db.User.find({ userLastName: userLastName })
+    // creates a user
+    // .post(controllers.userController.create)
+    create: (req, res) => {
+        db.User
+            .create(req.body)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
 
-    //query user by userEmail
-    // controllers.userController.findUserByEmail(email)
-    findUserByEmail: (email) => {
-        db.User.find({ email: email })
+    // updates user info
+    // .put(controllers.userController.update)
+    update: (req, res) => {
+        db.User
+            .findOneAndUpdate({ userEmail: req.params.userEmail }, req.body)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
 
-    //query user by userPhone
-    // controllers.userController.findUserByPhone(userPhone)
-    findUserByPhone: (userPhone) => {
-        db.User.find({ userPhone: userPhone })
-    },
-
-    //query user by admin{boolean}
-    // controllers.userController.findIfUserAdmin(admin)
-    findIfUserAdmin: (admin) => {
-        db.User.find({ admin: admin })
-    },
-
-    //create a new user
-    // controllers.userController.createUser()
-    createUser: () => {
-        db.User.create()
-    },
-
-    //remove user
-    // controllers.userController.removeUser(email)
-    removeUser: (email) => {
-        db.User.remove({ email: email })
+    // deletes a user by their email
+    // .delete(controllers.userController.remove)
+    remove: (req, res) => {
+        db.User
+            .findById({ userEmail: req.params.userEmail })
+            .then(dbModel => dbModel.remove())
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err))
     }
 };

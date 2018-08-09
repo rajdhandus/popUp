@@ -44,7 +44,7 @@ var userSchema = new Schema({
   },
 
   //Email address with regex validation
-  email: {
+  userEmail: {
     type: String,
     unique: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
