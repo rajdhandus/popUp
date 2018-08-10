@@ -1,12 +1,16 @@
-var router = require("express").Router();
-var itemController = require("../../controllers/itemController");
+const router = require("express").Router();
+const itemController = require("../../controllers/itemController");
 
 //GET and POST
-router
-    .route("/")
+// Matches with "/api/items"
+router.route("/")
     .get(itemController.findAll)
     .post(itemController.create);
 
-// router.route(/*conditionals*/);
+// Matches with "/api/items/:upc"
+router.route("/:upc")
+    .get(itemController.findOne)
+    .put(itemController.update)
+    .delete(itemController.remove);
 
 module.exports = router;

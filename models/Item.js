@@ -1,13 +1,12 @@
-var mongoose = require("mongoose");
-
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 var itemSchema = new Schema({
     
-    store_id: {
-        type: Schema.Types.ObjectId,
-        ref: "Store"
-    },
+    // store_id: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Store"
+    // },
 
     name: String,
     upc: Number,
@@ -16,6 +15,6 @@ var itemSchema = new Schema({
     photoURL: String
 });
 
-var Item = mongoose.model("Item", itemSchema);
+const Item = mongoose.model("Item", itemSchema);
 
 module.exports = Item;
