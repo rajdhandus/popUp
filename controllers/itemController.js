@@ -9,12 +9,6 @@ const db = require("../models");
 const router = express.Router();
 // const Item = require("../models/Item");
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/popupDB";
-
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
-
-
 // router.get("/items", function(req,res))
 
 module.exports = {

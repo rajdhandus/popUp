@@ -63,6 +63,6 @@ var storeSchema = new Schema({
 
 });
 
-var Store = mongoose.model("Store", storeSchema);
+var store = mongoose.model("Store", storeSchema);
 
 module.exports = store;
