@@ -1,0 +1,41 @@
+.bg-dark {
+  background-color:rgba(10,10,10,0.85)!important;
+}
+
+
+.footer {
+  background-color:rgba(10,10,10,10);
+}
+
+.text-primary {
+  color:#f8e4b1!important;
+}
+
+.page-section.cta {
+  background-color:rgba(10,10,10,0.85)!important;
+}
+
+.list-hours .list-hours-item {
+  border-bottom:1px solid rgb(0,0,0);
+  padding-bottom:.25rem;
+  margin-bottom:1rem;
+}
+
+legend {
+  display:block;
+  width:100%;
+  max-width:100%;
+  padding:10px;
+  margin-bottom:.5rem;
+  font-size:1.5rem;
+  line-height:inherit;
+  color:inherit;
+  white-space:normal;
+}
+
+.img-fluid.d-flex.mx-auto.product-item-img.mb-3.mb-lg-0.rounded {
+  object-fit:cover;
+  height:600px;
+  width:600px;
+}
+

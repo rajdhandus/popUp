@@ -1,0 +1,57 @@
+.text-center {
+   text-align: center !important;
+};
+
+.text-white {
+    color:#fff !important;
+  }
+
+.tagline {
+    color:#f8e4b1;
+    font-family: Montserrat;
+    font-size: 1em;
+}
+
+.site-heading {
+    margin-bottom: 2rem;
+    line-height: 1;
+    font-family: Oswald;
+    height: 4em;
+    margin-top: 2em;
+    font-size: 2em;
+  }
+
+  @media (min-width:992px) {
+    .d-lg-block {
+      display:block !important;
+    }
+
+  }
+
+  .d-none {
+    display:none !important;
+  }
+
+  .mb-3 {
+    margin-bottom: 1em !important;
+  }
+
+  .site-heading .site-heading-upper {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  .site-heading .site-heading-lower {
+    font-size: 5rem;
+    font-weight: 100;
+    line-height: 4rem;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
