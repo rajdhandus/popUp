@@ -23,12 +23,12 @@ var storeSchema = new Schema({
         match: [/.+@.+\..+/, "Please enter a valid e-mail address."]
     },
 
-   //  Store Location
-   storeStreet: {
-    type: String,
-    trim: true,
-    required: "Please enter the store's street address."
-   },
+    //  Store Location
+    storeStreet: {
+        type: String,
+        trim: true,
+        required: "Please enter the store's street address."
+    },
 
     storeCity: {
         type: String,
@@ -39,7 +39,7 @@ var storeSchema = new Schema({
     storeState: {
         type: String,
         trim: true,
-        match: [^(?i:A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$, "Please enter a valid state abbreviation."]
+        match: [/^(?i:A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])/$, "Please enter a valid state abbreviation."]
     },
 
     storeZip: {
@@ -48,7 +48,7 @@ var storeSchema = new Schema({
         match: [/^\d{5}$|^\d{5}-\d{4}$/, "Please enter the store's zipcode."]
     },
 
-       // Store Phone Number
+    // Store Phone Number
     storePhone: {
         type: String,  // Might need to be number here.
         unique: true,
@@ -63,6 +63,6 @@ var storeSchema = new Schema({
 
 });
 
-var store = mongoose.model("Store", storeSchema);
+var Store = mongoose.model("Store", storeSchema);
 
 module.exports = Store;
