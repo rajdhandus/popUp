@@ -7,6 +7,6 @@ router
     .get(itemController.findAll)
     .post(itemController.create);
 
-router.route(/*conditionals*/);
+// router.route(/*conditionals*/);
 
 module.exports = router;

@@ -20,6 +20,6 @@ var transactionSchema = new Schema({
     }]
 });
 
-var Transaction = mongoose.model("Item", transactionSchema);
+var Transaction = mongoose.model("Transaction", transactionSchema);
 
 module.exports = Transaction;

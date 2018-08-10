@@ -4,10 +4,10 @@ var transactionController = require("../../controllers/transactionController");
 //GET and POST
 router
     .route("/")
-    .get(transactionController.findAll)
+    .get(transactionController.findOne)
     .post(transactionController.create);
 
-router
-    .route(/*conditionals*/);
+// router
+//     .route(/*conditionals*/);
 
 module.exports = router;
