@@ -1,5 +1,5 @@
 var router = require("express").Router();
-var userController = require("../../controllers/transactionController");
+var userController = require("../../controllers/userController");
 
 //GET and POST
 router
@@ -7,7 +7,7 @@ router
     .get(userController.findAll)
     .post(userController.create);
 
-router
-    .route(/*conditionals*/);
+// router
+//     .route(/*conditionals*/);
 
 module.exports = router;
