@@ -35,7 +35,8 @@ const Navbar = () => (
   >
     <div className="container">
       <a className="navbar-brand" href="{#}" style={aStyle}>
-        <i className="icon ion-ios-flower" />&nbsp;POPUPTHEORY
+        <i className="icon ion-ios-flower" />
+        &nbsp;POPUPTHEORY
       </a>
       <div className="collapse navbar-collapse" id="navcol-1">
         <ul className="nav navbar-nav mr-auto">
@@ -80,17 +81,16 @@ const Navbar = () => (
             </a>
           </li>
         </ul>
-        <span className="navbar-text actions">
-          <a
+         <span className="navbar-text actions">
+          <button
             className="btn btn-light action-button"
-            role="button"
             href="{#}"
             data-bs-hover-animate="pulse"
             style={cStyle}
           >
             REGISTER / SIGN IN
-          </a>
-        </span>
+          </button>
+        </span> 
       </div>
     </div>
   </nav>

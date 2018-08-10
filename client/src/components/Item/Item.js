@@ -14,7 +14,7 @@ const Item = props => (
                 &nbsp;&nbsp;&nbsp;
               </span>
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <i className="fa fa-shopping-cart" />
+              <button className="btn cart"><i className="fa fa-shopping-cart" /> add to cart</button>
             </h2>
           </div>
         </div>
