@@ -8,6 +8,7 @@ import Instagram from "./components/Instagram";
 import Products from "./Pages/Products";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 class App extends Component {
   
@@ -24,6 +25,7 @@ class App extends Component {
             <Intro />
             <Instagram />
             <Contact />
+            <Footer />
             </div>
          } />
        
@@ -32,6 +34,7 @@ class App extends Component {
             <Header />
             <Navbar />
             <Products />
+            <Footer />
             </div>
          } />
        </Switch>
