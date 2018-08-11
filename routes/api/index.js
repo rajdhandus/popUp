@@ -7,6 +7,7 @@ const transactionRoutes = require("./transactions");
 
 
 // Item routes
+console.log("In api/index.js")
 router.use("/items", itemRoutes);
 
 // User routes
