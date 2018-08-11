@@ -8,7 +8,7 @@ const Instagram = () => (
         <div className="col-sm-12 mx-auto">
           <div className="intro-text left-0 text-centerfaded rounded text-center">
             <h2 className="section-heading">
-              <span id="instagram" className="section-heading-lower">
+              <span id="instagram" className="section-heading-lower mb-3">
                 Instagram
               </span>
             </h2>
