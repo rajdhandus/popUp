@@ -10,8 +10,9 @@ module.exports = {
     // queries all items
     // .get(itemController.findAll)
     findAll: (req, res) => {
+        console.log(req.body)
         db.Item
-            .find(req.query)  // may have to leave brackets empty to show all items
+            .find({})  // may have to leave brackets empty to show all items
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
@@ -30,6 +31,7 @@ module.exports = {
     // creates an item
     // .post(itemController.create)
     create: (req, res) => {
+        console.log(req.body)
         db.Item
             .create(req.body)
             .then(dbModel => res.json(dbModel))
