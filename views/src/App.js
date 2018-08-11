@@ -1,51 +1,74 @@
-import React, { Component } from 'react';
-import axios from "axios";
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/public/Home";
+import Instagram from "./pages/public/Instagram";
+import Contact from "./pages/public/Contact";
+import Cart from "./pages/public/Cart";
+import Products from "./pages/public/Products";
+import Admin from "./pages/admin/Login"
+import Dashboard from "./pages/admin/Dashboard";
+import Configuration from "./pages/admin/Configuration";
+import Inventory from "./pages/admin/Inventory";
+import Orders from "./pages/admin/Orders";
+import NotFound from "./pages/public/NotFound";
+import Header from "./components/public/Header";
+import AdminNav from "./components/admin/Navbar"
+import PublicNav from "./components/public/Navbar"
+import Footer from "./components/public/Footer"
 
-class App extends Component {
+// MAKE A STATEFUL COMPONENT TO TRACK ADMIN STATUS
+// DISPLAY EITHER EITHER NAVBAR AS A RESULT
+// SET STATE ON EACH PAGE WHICH "FAKES" THE ADMIN STATUS
 
-  state = { 
-    users: [],
-    flowers: []
-  }
+// const data = {
+//   isAdmin: false
+// }
 
-  componentDidMount() {
+// let navBar;
 
-    axios.get('/admin')
-      .then((response) => {
-        this.setState({users: response.data})
-      })
+// if (data.isAdmin === true) {
+//   navBar = <AdminNav />;
+// } else {
+//   navBar = <PublicNav />;
+// }
 
-    axios.get('/store')
-    .then((response) => {
-      this.setState({flowers: response.data})
-    })
-
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <h1>Team Members</h1>
-        <h2>(parsed response from /admin)</h2>
-        {this.state.users.map(user => 
-          <p key={user.id}>{user.name}</p>
-        )}
-        <br/>
-        <h1>Sample Products</h1>
-        <h2>(parsed response from /store)</h2>
-        {this.state.flowers.map(flowers => 
-          <p key={flowers.id}>{flowers.name}</p>
-        )}
-      </div>
-    );
-  }
-
-}
+const App = () => (
+  <Router>
+    <div>
+      <header>
+        <Header />
+      </header>
+      <nav>
+        <Route exact path="/" component={PublicNav} />
+        <Route exact path="/instagram" component={PublicNav} />
+        <Route exact path="/contact" component={PublicNav} />
+        <Route exact path="/products" component={PublicNav} />
+        <Route exact path="/cart" component={PublicNav} />
+        <Route exact path="/admin/dashboard" component={AdminNav} />
+        <Route exact path="/admin/configuration" component={AdminNav} />
+        <Route exact path="/admin/inventory" component={AdminNav} />
+        <Route exact path="/admin/orders" component={AdminNav} />
+      </nav>
+      <main>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/instagram" component={Instagram} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/products" component={Products} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/admin/dashboard" component={Dashboard} />
+          <Route exact path="/admin/configuration" component={Configuration} />
+          <Route exact path="/admin/inventory" component={Inventory} />
+          <Route exact path="/admin/orders" component={Orders} />
+          <Route component={NotFound} />
+        </Switch>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
+  </Router>
+);
 
 export default App;
