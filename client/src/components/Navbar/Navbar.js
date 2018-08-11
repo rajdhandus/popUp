@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import Modal from "../Modal";
 
 let orangeColor = [235, 191, 74];
 let blackColor = [0, 0, 0, 0.85];
@@ -42,8 +43,8 @@ const Navbar = () => (
         <ul className="nav navbar-nav mr-auto">
           <li className="nav-item" role="presentation">
             <a
-              className="nav-link active"
-              href="{#}"
+              className="nav-link"
+              href="/"
               data-bs-hover-animate="pulse"
               style={bStyle}
             >
@@ -53,7 +54,7 @@ const Navbar = () => (
           <li className="nav-item" role="presentation">
             <a
               className="nav-link"
-              href="{#}"
+              href="/#instagram"
               data-bs-hover-animate="pulse"
               style={bStyle}
             >
@@ -63,7 +64,7 @@ const Navbar = () => (
           <li className="nav-item" role="presentation">
             <a
               className="nav-link"
-              href="{contact.html}"
+              href="/contact"
               data-bs-hover-animate="pulse"
               style={bStyle}
             >
@@ -73,7 +74,7 @@ const Navbar = () => (
           <li className="nav-item" role="presentation">
             <a
               className="nav-link"
-              href="{products.html}"
+              href="/products"
               data-bs-hover-animate="pulse"
               style={bStyle}
             >
@@ -82,17 +83,21 @@ const Navbar = () => (
           </li>
         </ul>
          <span className="navbar-text actions">
-          <button
+          <a
             className="btn btn-light action-button"
-            href="{#}"
+            role="button"
+            //href="#"
             data-bs-hover-animate="pulse"
             style={cStyle}
+            data-toggle="modal"
+            data-target="#registerModal"
           >
             REGISTER / SIGN IN
-          </button>
+          </a>
         </span> 
       </div>
     </div>
+    <Modal />
   </nav>
 );
 
