@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Sunflowers",
+        "upc": 10003,
+        "price": 34.56,
+        "stock": 345,
+        "photoURL": "https://images.pexels.com/photos/712098/pexels-photo-712098.jpeg?cs=srgb&dl=bloom-blooming-blossom-712098.jpg&fm=jpg"
+    },
+    {
+        "name": "Carnations",
+        "upc": 10000,
+        "price": 54.76,
+        "stock": 178,
+        "photoURL": "https://images.pexels.com/photos/136255/pexels-photo-136255.jpeg?cs=srgb&dl=beautiful-bloom-blooming-136255.jpg&fm=jpg"
+    },
+    {
+        "name": "Roses",
+        "upc": 10001,
+        "price": 86.34,
+        "stock": 209,
+        "photoURL": "https://images.pexels.com/photos/265815/pexels-photo-265815.jpeg?cs=srgb&dl=bloom-blossom-bouquet-265815.jpg&fm=jpg"
+    }
+]
