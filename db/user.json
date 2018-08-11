@@ -1,0 +1,20 @@
+[
+    {
+        "userFirstName": "Candy",
+        "userLastName": "B",
+        "userPassword": "candy123",
+        "userPhone": "893-123-4567",
+        "userEmail": "candyb@gmail.com",
+        "admin": "true",
+        "memberSince": ""
+    },
+    {
+        "userFirstName": "Ryan",
+        "userLastName": "M",
+        "userPassword": "ryan123",
+        "userPhone": "894-123-4567",
+        "userEmail": "ryanm@gmail.com",
+        "admin": "true",
+        "memberSince": ""
+    }
+]
