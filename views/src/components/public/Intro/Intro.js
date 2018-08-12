@@ -1,5 +1,5 @@
 import React from "react";
-// import "./Intro.css";
+import "./Intro.css";
 
 const Intro = () => (
      <div className="page-section clearfix">
