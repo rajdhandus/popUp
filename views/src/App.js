@@ -14,7 +14,7 @@ import NotFound from "./pages/public/NotFound";
 import Header from "./components/public/Header";
 import AdminNav from "./components/admin/Navbar"
 import PublicNav from "./components/public/Navbar"
-import Footer from "./components/public/Footer"
+// import Footer from "./components/public/Footer"
 
 // MAKE A STATEFUL COMPONENT TO TRACK ADMIN STATUS
 // DISPLAY EITHER EITHER NAVBAR AS A RESULT
@@ -64,9 +64,9 @@ const App = () => (
           <Route component={NotFound} />
         </Switch>
       </main>
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   </Router>
 );
