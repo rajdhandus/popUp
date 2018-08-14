@@ -1,0 +1,35 @@
+[
+    {
+        "storeName": "Maker City",
+        "storeAbout": "Where makers, programmers, scientists, engineers, students and creative minds have access to equipment and building space for a supportive shared learning experience.",
+        "storeEmail": "makercity@gmail.com",
+        "storeStreet": "123 Build Your St.",
+        "storeCity": "Charlotte",
+        "storeState": "NC",
+        "storeZip": 28206,
+        "storePhone": "123-456-7890",
+        "storeLogo": "https://images.pexels.com/photos/1251176/pexels-photo-1251176.jpeg?cs=srgb&dl=builder-carpenter-close-up-1251176.jpg&fm=jpg"
+    },
+    {
+        "storeName": "Cupcake Craze",
+        "storeAbout": "Cupcakes, cookies, cakepops and other delicious treats that are made fresh, from scratch!  No box mixes or synthetic additives.  Nothing but nonstop creativity, inspired by pop culutre and candy.",
+        "storeEmail": "cupcakecraze@gmail.com",
+        "storeStreet": "456 Sprinkle Ln.",
+        "storeCity": "Charlotte",
+        "storeState": "NC",
+        "storeZip": 28206,
+        "storePhone": "246-801-3579",
+        "storeLogo": "https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?cs=srgb&dl=baked-berry-cake-1055272.jpg&fm=jpg"
+    },
+    {
+        "storeName": "Bubblicious",
+        "storeAbout": "A trendsetting soap store, offering our first-rate products and exceptional customer service to shoppers from the comfort of their own homes. We’re a small business made up of innovators and forward-thinkers, with the drive and wherewithal to constantly update and improve the online shopping experience.",
+        "storeEmail": "bubblicious@gmail.com",
+        "storeStreet": "789 Soapy Ave.",
+        "storeCity": "Charlotte",
+        "storeState": "NC",
+        "storeZip": 28206,
+        "storePhone": "523-983-7298",
+        "storeLogo": "https://images.pexels.com/photos/773252/pexels-photo-773252.jpeg?cs=srgb&dl=bar-bath-clean-773252.jpg&fm=jpg"
+    }
+]

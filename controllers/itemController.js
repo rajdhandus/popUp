@@ -1,10 +1,6 @@
-// http://mongoosejs.com/docs/api.html
-
-// controller -> apiRoute -> utils(frontend) -> components(jsx)
-// when a callback happens (goes backward)
-
 const db = require("../models");
 
+// Defining methods for itemController
 module.exports = {
 
     // queries all items
@@ -12,11 +8,11 @@ module.exports = {
     findAll: (req, res) => {
         console.log(req.body)
         db.Item
+            //.find(req.query)
             .find({})  // may have to leave brackets empty to show all items
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-
 
     // queries one item by it's upc
     // .get(itemController.findOne)
