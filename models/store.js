@@ -48,7 +48,7 @@ var storeSchema = new Schema({
         match: [/^\d{5}$|^\d{5}-\d{4}$/, "Please enter the store's zipcode."]
     },
 
-    // Store Phone Number
+    // Store Phone Number //////
     storePhone: {
         type: String,  // Might need to be number here.
         unique: true,

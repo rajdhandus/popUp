@@ -1,5 +1,5 @@
 module.exports = {
-    Store: require("./Store"),
+    Store: require("./store"),
     User: require("./User"),
     Item: require("./Item"),
     Transaction: require("./Transaction")    
