@@ -1,4 +1,5 @@
 // REQUIRED PACKAGES
+require ('dotenv').config(); 
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -30,8 +31,20 @@ app.use(apiRouter);
 // INVOKE MIDDLEWARE
 
 
+// DB CONFIGURATION
+const user = process.env.USER;
+const pwd = process.env.PASSWORD;
+const mlab = "mongodb://" + user + ":" + pwd + "@ds115472.mlab.com:15472/popup"
+const databaseUrl = mlab;
+
+// Hook mongojs configuration to the db variable
+var db = mongojs(databaseUrl, collections);
+db.on("error", function (error) {
+  console.log("Database Error:", error);
+});
+
 // CONNECT TO THE DB
-mongoose.connect("mongodb://localhost:27017/popup", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost:27017/popup", { useNewUrlParser: true });
 
 // INITIALIZE LISTEN
 app.listen(port, function() {
