@@ -40,6 +40,7 @@ var userSchema = new Schema({
   userPhone: {
     type: String,
     unique: true,
+    required: true,
     match: [/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/, "Please enter a valid phone number."]
   },
 
@@ -47,6 +48,7 @@ var userSchema = new Schema({
   userEmail: {
     type: String,
     unique: true,
+    required: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
 
