@@ -1,6 +1,6 @@
 import React from "react";
 import "./Contact.css";
-import Email from "../Email";
+// import Email from "../Email";
 
 const Contact = () => (
   <div className="intro-text left-0 text-centerfaded rounded text-center mb-3">
@@ -44,7 +44,8 @@ const Contact = () => (
             </div>
             <div className="card-body">
             <i class="fas fa-envelope"></i>
-            <h3 className="card-title pointer email" role="button" data-toggle="modal" data-target="#modalContactForm">Email</h3>
+            {/* <h3 className="card-title pointer email" role="button" data-toggle="modal" data-target="#modalContactForm">Email</h3> */}
+            <h3> <a className="card-title pointer" role="button" href="mailto:admin@popuptheory.com" target="_top">Email</a></h3>
               <p className="card-text">admin@popuptheory.com <br />&nbsp;</p>
             </div>
           </div>
@@ -85,7 +86,7 @@ const Contact = () => (
         </div>
       </div>
     </div>
-    <Email />
+    {/* <Email /> */}
     </div>
  
 );

@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+a {
+    color: black;
+}
+
 .email:hover {
     color: #EBBF4A;
 }
