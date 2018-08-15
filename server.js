@@ -2,17 +2,23 @@
 require ('dotenv').config(); 
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
 const apiRouter = require("./routes");
+const mongoose = require("mongoose");
 const app = express();
 const port = 3001;
-
 const logger = require("morgan");
 // const controller = require("./controllers");
 
 // APP CONFIGURATIONS
 const adminRouter = require('./routes/admin');
 const storeRouter = require('./routes/store');
+
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -28,23 +34,10 @@ app.use('/store', storeRouter);
 app.use(apiRouter);
 // app.use(controller);
 
+
 // INVOKE MIDDLEWARE
 
-
-// DB CONFIGURATION
-const user = process.env.USER;
-const pwd = process.env.PASSWORD;
-const mlab = "mongodb://" + user + ":" + pwd + "@ds115472.mlab.com:15472/popup"
-const databaseUrl = mlab;
-
-// Hook mongojs configuration to the db variable
-var db = mongojs(databaseUrl, collections);
-db.on("error", function (error) {
-  console.log("Database Error:", error);
-});
-
 // CONNECT TO THE DB
-// mongoose.connect("mongodb://localhost:27017/popup", { useNewUrlParser: true });
 
 // INITIALIZE LISTEN
 app.listen(port, function() {
