@@ -13,7 +13,7 @@ const logger = require("morgan");
 const adminRouter = require('./routes/admin');
 const storeRouter = require('./routes/store');
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
@@ -25,7 +25,6 @@ app.use(bodyParser.json());
 
 // INITIALIZE EXPRESS
 
-// LOG SERVER EVENTS
 app.use(logger('dev'));
 
 // REQUIRE API ROUTES
