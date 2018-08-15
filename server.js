@@ -5,9 +5,14 @@ const bodyParser = require("body-parser");
 const apiRouter = require("./routes");
 const mongoose = require("mongoose");
 const app = express();
+const path = require("path");
 const port = process.env.PORT || 3001;
 const logger = require("morgan");
 // const controller = require("./controllers");
+
+// Serve static files from the React App
+app.use(express.static(path.join(__dirname, 'views/build')));
+
 
 // APP CONFIGURATIONS
 const adminRouter = require('./routes/admin');
