@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const apiRouter = require("./routes");
 const mongoose = require("mongoose");
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 const logger = require("morgan");
 // const controller = require("./controllers");
 
