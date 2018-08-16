@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/public/Home";
 import Instagram from "./pages/public/Instagram";
-import Contact from "./pages/public/Contact";
+// import Contact from "./pages/public/Contact";
 import Cart from "./pages/public/Cart";
 import Products from "./pages/public/Products";
 import Admin from "./pages/admin/Login"
@@ -41,7 +41,6 @@ const App = () => (
       <nav>
         <Route exact path="/" component={PublicNav} />
         <Route exact path="/instagram" component={PublicNav} />
-        <Route exact path="/contact" component={PublicNav} />
         <Route exact path="/products" component={PublicNav} />
         <Route exact path="/cart" component={PublicNav} />
         <Route exact path="/admin/dashboard" component={AdminNav} />
@@ -53,7 +52,6 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/instagram" component={Instagram} />
-          <Route exact path="/contact" component={Contact} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/admin" component={Admin} />
