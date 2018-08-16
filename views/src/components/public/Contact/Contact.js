@@ -5,7 +5,7 @@ import "./Contact.css";
 const Contact = () => (
   <div className="intro-text left-0 text-centerfaded rounded text-center mb-3">
     <h2 className="section-heading">
-      <span id="instagram" className="section-heading-lower mb-3">
+      <span id="contact" className="section-heading-lower mb-3">
         Contact Us
       </span>
     </h2>

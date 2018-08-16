@@ -64,7 +64,7 @@ const Navbar = () => (
           <li className="nav-item" role="presentation">
             <a
               className="nav-link"
-              href="/contact"
+              href="/#contact"
               data-bs-hover-animate="pulse"
               style={bStyle}
             >
