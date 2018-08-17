@@ -18,14 +18,15 @@ app.use(bodyParser.json());
 // app.use(express.static(path.join(__dirname, 'views/build')));
 
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "development") {
-  app.use(express.static("/views/build"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/views/build")));
 
-  app.get('/*', (req, res) => {
-    res.sendFile(path.resolve(`${__dirname}/../views/index.html`))
-  })
+
+  app.get('/', function (req, res) {
+    console.log('path.join: ', path.join(__dirname, "/views/build/index.html"))
+    res.sendFile(path.join(__dirname, "/views/build/index.html"));
+  });
 }
-
 // Add routes, both API and view
 app.use(apiRouter);
 

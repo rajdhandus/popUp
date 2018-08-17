@@ -5,16 +5,16 @@ import Instagram from "./pages/public/Instagram";
 // import Contact from "./pages/public/Contact";
 import Cart from "./pages/public/Cart";
 import Products from "./pages/public/Products";
-import Admin from "./pages/admin/Login"
+import Admin from "./pages/admin/Login";
 import Dashboard from "./pages/admin/Dashboard";
 import Configuration from "./pages/admin/Configuration";
 import Inventory from "./pages/admin/Inventory";
 import Orders from "./pages/admin/Orders";
 import NotFound from "./pages/public/NotFound";
 import Header from "./components/public/Header";
-import AdminNav from "./components/admin/Navbar"
-import PublicNav from "./components/public/Navbar"
-// import Footer from "./components/public/Footer"
+import AdminNav from "./components/admin/Navbar";
+import PublicNav from "./components/public/Navbar";
+// import Footer from "./components/public/Footer";
 
 // MAKE A STATEFUL COMPONENT TO TRACK ADMIN STATUS
 // DISPLAY EITHER EITHER NAVBAR AS A RESULT
