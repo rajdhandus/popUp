@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'views/*'\" \"npm run views\"",
+    "start:dev": "concurrently \"nodemon --ignore 'views/*'\" \"npm run client\"",
     "client": "cd views && npm run start",
     "install": "cd views && yarn install",
     "build": "cd views && npm run build",
