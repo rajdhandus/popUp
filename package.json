@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "build": "cd views && npm install && npm run build",
     "postinstall": "webpack -p --config ./webpack.config.js --progress"
   },
