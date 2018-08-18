@@ -4,9 +4,38 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dashboard -- webpack-dev-server",
-    "prebuild": "rimraf dist",
-    "build": "webpack -p"
+    "start": "npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'views/*'\" \"npm run client\"",
+    "client": "cd views && npm run start",
+    "install": "cd views && npm install",
+    "build": "cd views && npm run build",
+    "postinstall": "webpack -p --config ./webpack.config.js --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajdhandus/popUp.git"
+  },
+  "keywords": [
+    "popup",
+    "ecommerce"
+  ],
+  "author": "Team Popup",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rajdhandus/popUp/issues"
+  },
+  "homepage": "https://github.com/rajdhandus/popUp#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.5",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7",
+    "react-router-dom": "^4.3.1",
+    "webpack": "^4.16.5"
   },
   "keywords": [],
   "author": "",
