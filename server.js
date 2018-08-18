@@ -1,5 +1,5 @@
 // REQUIRED PACKAGES
-require ('dotenv').config(); 
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -8,6 +8,7 @@ const app = express();
 const path = require("path");
 const port = process.env.PORT || 3001;
 const logger = require("morgan");
+const uristring = process.env.MONGODB_URI || 'mongodb://localhost/popup';
 // const controller = require("./controllers");
 
 // Define middleware
@@ -23,16 +24,16 @@ if (process.env.NODE_ENV === "production") {
   // app.use(express.static("/views/build"));
 
 
-  // app.get('/', function (req, res) {
-  //   console.log('path.join: ', path.join(__dirname, "/views/build/index.html"))
-  //   res.sendFile(path.join(__dirname, "/views/build/index.html"));
-  // });
-
-
-  app.get('*', function (req, res) {
+  app.get('/', function (req, res) {
     console.log('path.join: ', path.join(__dirname, "/views/build/index.html"))
-    res.sendFile(path.join(__dirname, "views", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "/views/build/index.html"));
   });
+
+
+  // app.get('*', function (req, res) {
+  //   console.log('path.join: ', path.join(__dirname, "/views/build/index.html"))
+  //   res.sendFile(path.join(__dirname, "views", "build", "index.html"));
+  // });
 }
 // Add routes, both API and view
 app.use(apiRouter);
@@ -46,7 +47,13 @@ app.use(apiRouter);
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 // mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/popup");
+mongoose.connect(uristring, function (err, res) {
+  if (err) {
+    console.log("Error connecting to: " + uristring + ". " + err);
+  } else {
+    console.log("Succeeded connecting to: " + uristring);
+  }
+});
 
 // INITIALIZE EXPRESS
 app.use(logger('dev'));
@@ -56,6 +63,6 @@ app.use(logger('dev'));
 // app.use('/store', storeRouter);
 // app.use(controller);
 
-app.listen(port, function() {
+app.listen(port, function () {
   console.log(`> API server is listening on port ${port}.`);
 });
