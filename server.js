@@ -19,12 +19,19 @@ app.use(bodyParser.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/views/build")));
+  // app.use(express.static(path.join(__dirname, "/views/build")));
+  app.use(express.static("/views/build"));
 
 
-  app.get('/', function (req, res) {
+  // app.get('/', function (req, res) {
+  //   console.log('path.join: ', path.join(__dirname, "/views/build/index.html"))
+  //   res.sendFile(path.join(__dirname, "/views/build/index.html"));
+  // });
+
+
+  app.get('*', function (req, res) {
     console.log('path.join: ', path.join(__dirname, "/views/build/index.html"))
-    res.sendFile(path.join(__dirname, "/views/build/index.html"));
+    res.sendFile(path.resolve(__dirname, "views", "build", "index.html"));
   });
 }
 // Add routes, both API and view
@@ -42,7 +49,6 @@ app.use(apiRouter);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/popup");
 
 // INITIALIZE EXPRESS
-
 app.use(logger('dev'));
 
 // REQUIRE API ROUTES
