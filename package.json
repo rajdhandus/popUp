@@ -4,12 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'views/*'\" \"npm run client\"",
-    "client": "cd views && npm run start",
-    "install": "cd views && npm install",
-    "build": "cd views && npm run build",
+    "start": "node index.js",
+    "build": "cd views && npm install && npm run build",
     "postinstall": "webpack -p --config ./webpack.config.js --progress"
   },
   "repository": {
