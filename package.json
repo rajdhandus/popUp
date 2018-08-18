@@ -10,7 +10,7 @@
     "client": "cd views && npm run start",
     "install": "cd views && npm install",
     "build": "cd views && npm run build",
-    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
+    "postinstall": "webpack -p --config ./webpack.prod.config.js --progress"
   },
   "repository": {
     "type": "git",
@@ -35,8 +35,7 @@
     "morgan": "^1.9.0",
     "path": "^0.12.7",
     "react-router-dom": "^4.3.1",
-    "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0"
+    "webpack": "^4.16.5"
   },
   "devDependencies": {
     "webpack": "^4.16.5",
