@@ -10,7 +10,7 @@
     "client": "cd views && npm run start",
     "install": "cd views && yarn install",
     "build": "cd views && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,12 @@
     "mongoose": "^5.2.5",
     "morgan": "^1.9.0",
     "path": "^0.12.7",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
   }
 }
