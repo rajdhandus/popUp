@@ -13,7 +13,7 @@ const PATHS = {
 
 const options = {
   host:'localhost',
-  port:'1234'
+  port:'3001'
 };
 
 module.exports = {
