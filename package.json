@@ -10,7 +10,7 @@
     "client": "cd views && npm run start",
     "install": "cd views && npm install",
     "build": "cd views && npm run build",
-    "heroku-postbuild": "webpack -p"
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
   },
   "repository": {
     "type": "git",
