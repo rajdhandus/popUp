@@ -10,7 +10,7 @@
     "client": "cd views && npm run start",
     "install": "cd views && npm install",
     "build": "cd views && npm run build",
-    "postinstall": "webpack -p --config ./webpack.prod.config.js --progress"
+    "postinstall": "webpack -p --config ./webpack.config.js --progress"
   },
   "repository": {
     "type": "git",
