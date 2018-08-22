@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = {
     // queries all users
-    // .get(controllers.userController.findAll)
+    // .get(userController.findAll)
     findAll: (req, res) => {
         db.User
             .find({})
@@ -11,7 +11,7 @@ module.exports = {
     },
 
     // queries a user by their email
-    // .get(controllers.userController.findOne)
+    // .get(userController.findOne)
     findOne: (req, res) => {
         db.User
             .find({ userEmail: userEmail })
@@ -20,7 +20,7 @@ module.exports = {
     },
 
     // creates a user
-    // .post(controllers.userController.create)
+    // .post(userController.create)
     create: (req, res) => {
         db.User
             .create(req.body)
@@ -29,7 +29,7 @@ module.exports = {
     },
 
     // updates user info
-    // .put(controllers.userController.update)
+    // .put(userController.update)
     update: (req, res) => {
         db.User
             .findOneAndUpdate({ userEmail: req.params.userEmail }, req.body)
@@ -38,7 +38,7 @@ module.exports = {
     },
 
     // deletes a user by their email
-    // .delete(controllers.userController.remove)
+    // .delete(userController.remove)
     remove: (req, res) => {
         db.User
             .findById({ userEmail: req.params.userEmail })
