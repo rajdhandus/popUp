@@ -4,10 +4,10 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
 
   //Store account
-  store_id: {
-    type: Schema.Types.ObjectId,
-    ref: "Store"
-  },
+  // store_id: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Store"
+  // },
 
   //First name
   userFirstName: {

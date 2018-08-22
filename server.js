@@ -23,7 +23,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/views/build")));
   // app.use(express.static("/views/build"));
 
-
   app.get('/', function (req, res) {
     console.log('path.join: ', path.join(__dirname, "/views/build/index.html"))
     res.sendFile(path.join(__dirname, "/views/build/index.html"));

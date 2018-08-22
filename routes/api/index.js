@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const itemRoutes = require("./items");
 const userRoutes = require("./users");
-// const storeRoutes = require("./stores");
+const storeRoutes = require("./store");
 const transactionRoutes = require("./transactions");
 
 
@@ -14,7 +14,7 @@ router.use("/items", itemRoutes);
 router.use("/users", userRoutes);
 
 // Store routes
-// router.use("/stores", storeRoutes);
+router.use("/store", storeRoutes);
 
 // Transaction routes
 router.use("/transactions", transactionRoutes);
