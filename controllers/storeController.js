@@ -2,17 +2,8 @@ const db = require("../models");
 
 module.exports = {
 
-    // queries all store information
-    // .get(controllers.storeController.findAll)
-    findAll: (req, res) => {
-        db.Store
-            .find({})
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
-    },
-
     // queries a store by it's storeEmail
-    // .get(controllers.storeController.findOne)
+    // .get(storeController.findOne)
     findOne: (req, res) => {
         db.Store
             .find({ storeEmail: storeEmail })
@@ -21,7 +12,7 @@ module.exports = {
     },
 
     // creates a store
-    // .post(controllers.storeController.create)
+    // .post(storeController.create)
     create: (req, res) => {
         db.Store
             .create(req.body)
@@ -30,7 +21,7 @@ module.exports = {
     },
 
     // updates store info
-    // .put(controllers.storeController.update)
+    // .put(storeController.update)
     update: (req, res) => {
         db.Store
             .findOneAndUpdate({ storeEmail: req.params.storeEmail }, req.body)
@@ -39,7 +30,7 @@ module.exports = {
     },
 
     // deletes a store by it's email
-    // .delete(controllers.storeController.remove)
+    // .delete(storeController.remove)
     remove: (req, res) => {
         db.Store
             .findById({ storeEmail: req.params.storeEmail })
