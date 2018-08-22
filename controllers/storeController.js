@@ -6,7 +6,7 @@ module.exports = {
     // .get(storeController.findOne)
     findOne: (req, res) => {
         db.Store
-            .find({ storeEmail: storeEmail })
+            .find({})
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
@@ -24,7 +24,7 @@ module.exports = {
     // .put(storeController.update)
     update: (req, res) => {
         db.Store
-            .findOneAndUpdate({ storeEmail: req.params.storeEmail }, req.body)
+            .findOneAndUpdate({ }, req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },

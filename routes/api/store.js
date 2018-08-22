@@ -5,11 +5,7 @@ const storeController = require("../../controllers/storeController");
 // Matches with "/api/store"
 router.route("/")
   .get(storeController.findOne)
-  .post(storeController.create);
-
-// Matches with "/api/store/:storeEmail"
-router.route("/:storeEmail")
-  .get(storeController.findOne)
+  .post(storeController.create)
   .put(storeController.update)
   .delete(storeController.remove);
 
