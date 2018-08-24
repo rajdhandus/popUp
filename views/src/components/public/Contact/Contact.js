@@ -78,7 +78,7 @@ const Contact = () => (
             <div className="card-body">
             <i class="fas fa-mobile"></i>
               <h3 className="card-title">Text</h3>
-              <p className="card-text">Text "popup" to <br />(555) 555-5555</p>
+              <p className="card-text">Text "hello" to <br />(704) 946-5665</p>
             </div>
           </div>
         </div>
