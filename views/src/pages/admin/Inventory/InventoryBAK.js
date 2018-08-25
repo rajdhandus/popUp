@@ -1,21 +1,18 @@
 import React, { Component } from "react";
 import "./Inventory.css";
-// import AddItem from "../../../components/admin/AddItem"
-import AddModal from "../../../components/admin/AddModal"
-import EditModal from "../../../components/admin/EditModal"
+import AddItem from "../../../components/admin/AddItem"
 import axios from "axios";
 
 class Inventory extends Component {
   constructor(props) {
     super(props)
-    this.refreshInventoryList = this.refreshInventoryList.bind(this);
+    this.getItems = this.getItems.bind(this);
   }
-
   state = {
     items: []
   }
 
-  refreshInventoryList() {
+  getItems() {
     axios.get('/api/items')
     .then(res => {
       const items = res.data;
@@ -27,12 +24,12 @@ class Inventory extends Component {
   }
 
   componentDidMount() {
-    this.refreshInventoryList();
+    this.getItems();
   }
 
   buttonEdit(e, upc) {
     e.preventDefault();
-    console.log(`Editing item with UPC #${upc} ...`);
+    console.log(`Editing item with UPC #${upc} ...`)
     alert("This will edit the item with UPC " + upc);
   }
 
@@ -44,18 +41,32 @@ class Inventory extends Component {
     if (!userConfirmation) {
       alert(`This item will not be deleted!`);
     } else {
-      // console.log(`Deleting item with UPC #${upc} ...`)
+      console.log(`Deleting item with UPC #${upc} ...`)
+      // alert("This will remove item with UPC " + upc);
       axios.delete('/api/items/' + upc)
       .then(res => {
-        // console.log(res);
-        // console.log(res.data);
-        this.refreshInventoryList()
+        console.log(res);
+        console.log(res.data);
+        this.getItems()
         //this.forceUpdate();
       }).catch(error => {
         console.log("There was an error deleting this item: ", error);
       })
     }
   }
+
+  // componentRefresh(e) {
+  //   e.preventDefault();
+  //   axios.get('/api/items')
+  //     .then(res => {
+  //       const items = res.data;
+  //       this.setState({ items })
+  //     })
+  //     .catch(function (err) {
+  //       console.log(err);
+  //     });
+  // }
+  
 
   render() {
     return (
@@ -119,13 +130,8 @@ class Inventory extends Component {
                         <button
                           id="btnEdit"
                           className="btn btn-light"
-                          data-toggle="modal"
-                          data-target="#editModal"
                           type="button"
-                          data-backdrop="static"
-                          data-keyboard="false"
-                          // onClick={(e) => this.buttonEdit(e, item.upc)}
-                          >
+                          onClick={(e) => this.buttonEdit(e, item.upc)}>
                           Edit
                         </button>
                         <button 
@@ -141,21 +147,9 @@ class Inventory extends Component {
                 </tbody>
               </table>
             )}
-            {/* <AddItem refreshInventoryList={this.refreshInventoryList} /> */}
+            <AddItem getItems={this.getItems}/>
           </div>
         </div>
-        <button
-          id="btnAdd"
-          className="btn btn-light action-button"
-          data-toggle="modal"
-          data-target="#addModal"
-          type="button"
-          data-backdrop="static"
-          data-keyboard="false">
-          Add Item To Inventory
-        </button>
-        <AddModal refreshInventoryList={this.refreshInventoryList} />
-        <EditModal refreshInventoryList={this.refreshInventoryList} />
       </div>
     );
   }
