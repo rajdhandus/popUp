@@ -8,7 +8,7 @@ const app = express();
 const path = require("path");
 const port = process.env.PORT || 3001;
 const logger = require("morgan");
-const uristring = process.env.MONGODB_URI || 'mongodb://localhost/popup';
+const uristring = process.env.MONGODB_URI || "mongodb://popup:popup1234@ds115472.mlab.com:15472/popup";
 // const controller = require("./controllers");
 
 // Define middleware
@@ -47,7 +47,7 @@ app.use(apiRouter);
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 // mongoose.Promise = Promise;
-mongoose.connect(uristring, function (err, res) {
+mongoose.connect(uristring, { useNewUrlParser: true } , function (err, res) {
   if (err) {
     console.log("Error connecting to: " + uristring + ". " + err);
   } else {
